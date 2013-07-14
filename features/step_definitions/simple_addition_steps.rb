@@ -1,7 +1,7 @@
 require File.expand_path('../../../eval.rb', __FILE__)
 
-Given /^a clean RubyScheme/ do
-  RubyScheme.reset!
+Given /^a clean RubyLisp/ do
+  RubyLisp.reset!
 end
 
 When /^I pass/ do
@@ -9,5 +9,5 @@ When /^I pass/ do
 end
 
 Then /^I should see `([^`]*)`$/ do |expected|
-  RubyScheme._eval(@expression, RubyScheme.env) == expected
+  RubyLisp._eval(@expression, RubyLisp.env) == expected
 end

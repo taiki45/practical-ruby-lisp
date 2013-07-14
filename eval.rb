@@ -1,4 +1,4 @@
-module RubyScheme
+module RubyLisp
   class << self
 
     def primitive_func_env
