@@ -98,12 +98,9 @@ def lookup_var(var, env)
   alist[var]
 end
 
-#TODO: refactor hash
 def extend_env(params, args, env)
-  alist = params.zip(args)
-  h = Hash.new
-  alist.each {|k, v| h[k] = v }
-  [h] + env
+  alist = Hash[params.zip(args)]
+  [alist] + env
 end
 
 def eval_lambda(exp, env)
