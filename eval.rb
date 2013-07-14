@@ -1,5 +1,3 @@
-require 'pry'
-
 module RubyScheme
   class << self
 
@@ -9,9 +7,15 @@ module RubyScheme
         :- => [:prim, lambda {|x, y| x + y }]
       }
     end
+    private :primitive_func_env
 
     def global_env
       @global_env ||= [primitive_func_env]
+    end
+    alias env global_env
+
+    def reset!
+      @global_env = [primitive_func_env]
     end
 
     def _eval(exp, env)
@@ -31,6 +35,8 @@ module RubyScheme
         end
       end
     end
+
+    private
 
     def list?(exp)
       exp.is_a? Array
@@ -130,5 +136,3 @@ module RubyScheme
 
   end
 end
-
-binding.pry
