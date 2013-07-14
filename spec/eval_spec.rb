@@ -1,5 +1,4 @@
-require 'pry'
-require File.expand_path('../eval', __FILE__)
+require 'spec_helper'
 
 describe RubyScheme do
   describe ".eval" do
