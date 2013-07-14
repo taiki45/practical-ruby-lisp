@@ -1,0 +1,5 @@
+= A project for my practice =
+
+== Goal ==
+* Implement a Lisp subset
+* Get used BDD with RSpec and Cucumber 
